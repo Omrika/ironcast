@@ -5,6 +5,7 @@ class CreateHangouts < ActiveRecord::Migration
       t.integer :hours
       t.integer :minutes
       t.text :description
+      t.string :meridiem
 
       t.timestamps null: false
     end
