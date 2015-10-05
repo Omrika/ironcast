@@ -51,7 +51,7 @@ class HangoutsController < ApplicationController
       @hangout = Hangout.find(params[:id])
     end
 
-    def post_params
+    def hangout_params
       params.require(:hangout).permit(:name, :hours, :minutes, :description)
     end
 end
