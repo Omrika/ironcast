@@ -3,6 +3,7 @@ class HangoutsController < ApplicationController
 
   def index
     @hangouts = Hangout.all
+    @hangout = Hangout.new
   end
 
   def show
