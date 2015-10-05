@@ -16,7 +16,7 @@ class HangoutsController < ApplicationController
   def create
     @hangout = Hangout.new(hangout_params)
     respond_to do |format|
-      if @post.save
+      if @hangout.save
         format.html { redirect_to @hangout, notice: 'Hangout was successfully created.' }
         format.json { render action: 'show', status: :created, location: @hangout }
       else
