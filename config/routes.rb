@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   resources :events
 
-  resources :responses
+  
 
-  resources :hangouts
+  resources :hangouts do
+    resources :responses
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
