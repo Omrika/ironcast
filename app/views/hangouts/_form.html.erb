@@ -1,8 +1,11 @@
-<%= form_for @hangouts do |f| %>
-<%= f.text_field :name %>
-<%= f.text_field :location %>
+<%= form_for @hangout do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+<%= f.label :time %>
 <%= f.select :hours, '1'..'12' %>
 <%= f.select :minutes, '01'..'59' %>
-<%= t.content :description %>
+<%= f.select :meridiem, 'AM'..'PM' %><br>
+<%= f.label :description %>
+<%= f.text_area :description %><br>
 <%= f.submit "Create Hangout" %>
 <% end %>
