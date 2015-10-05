@@ -47,11 +47,11 @@ class EventsController < ApplicationController
   end
 
   private
-    def set_hangout
+    def set_event
       @event = Event.find(params[:id])
     end
 
-    def post_params
+    def event_params
       params.require(:event).permit(:name, :description, :location, :hours, :minutes, :meridiem)
     end
 end
