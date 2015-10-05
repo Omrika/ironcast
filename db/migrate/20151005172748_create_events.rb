@@ -5,6 +5,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :location
       t.integer :hours
       t.integer :minutes
+      t.string :meridiem
 
       t.timestamps null: false
     end

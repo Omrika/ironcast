@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20151005173324) do
     t.string   "location"
     t.integer  "hours"
     t.integer  "minutes"
+    t.string   "meridiem"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 20151005173324) do
     t.integer  "hours"
     t.integer  "minutes"
     t.text     "description"
+    t.string   "meridiem"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
