@@ -1,0 +1,2 @@
+module HangoutResponsesHelper
+end

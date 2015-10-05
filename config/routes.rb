@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :hangout_responses
+
+  resources :events
+
+  resources :responses
+
+  resources :hangouts
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
