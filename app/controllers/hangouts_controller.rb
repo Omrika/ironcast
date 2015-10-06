@@ -14,10 +14,11 @@ class HangoutsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @hangout = Hangout.new(hangout_params)
     respond_to do |format|
       if @hangout.save
-        format.html { redirect_to @hangout, notice: 'Hangout was successfully created.' }
+        format.html { redirect_to '/hangouts', notice: 'Hangout was successfully created.' }
         format.json { render action: 'show', status: :created, location: @hangout }
       else
         format.html { render action: 'new' }
@@ -52,7 +53,7 @@ class HangoutsController < ApplicationController
     end
 
     def hangout_params
-      params.require(:hangout).permit(:name, :hours, :minutes, :description)
+      params.require(:hangout).permit(:name, :hours, :minutes, :meridiem, :description)
     end
 end
 
