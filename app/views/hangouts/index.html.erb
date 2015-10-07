@@ -9,6 +9,7 @@
 
 	<h1>Hangouts</h1>
 	<% @hangouts.each do |hangout| %>
+    <% if hangout.minutes != nil %>
 		<%= hangout.name %>
     wants to
 		<%= hangout.description %>
@@ -35,6 +36,7 @@
           <%end%>
 			<% end %>
 			<br>
+     <% end %>
 	<% end %>
 <% end %>
 	</div>
