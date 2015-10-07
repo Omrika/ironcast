@@ -10,12 +10,14 @@
 	<h1>Hangouts</h1>
 	<% @hangouts.each do |hangout| %>
 		<%= hangout.name %>
+    wants to
 		<%= hangout.description %>
 		<%= hangout.hours%>:<% if hangout.minutes < 10 %><%= "0" + hangout.minutes.to_s %>
 		<% else %>
 			<%= hangout.minutes %>
 		<% end %>
 	<%= hangout.meridiem %>
+  <%= link_to "Delete", hangout, method: :delete %>
 		<%= form_for [hangout, Response.new] do |f| %>
     <div class="field">
     <%= f.hidden_field :hangout_id, :value => hangout.id %>
@@ -28,8 +30,8 @@
     </div>
   <% end %>
 			<% if hangout.responses.length > 0 %> 
-        <% hangout.responses.each do |n|%>
-          <%= n.name%><br>
+        <% hangout.responses.each do |n|%> 
+          <%= n.name%> wants to join! <br>
           <%end%>
 			<% end %>
 			<br>
