@@ -56,7 +56,7 @@ class HangoutsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @hangout.update(post_params)
+      if @hangout.update(hangout_params)
         format.html { redirect_to @hangout, notice: 'Hangout was successfully updated.' }
         format.json { head :no_content }
       else
@@ -68,11 +68,8 @@ class HangoutsController < ApplicationController
 
   def destroy
     @hangout.destroy
-    respond_to do |format|
-      format.html { redirect_to hangouts_url}
-      format.json { head :no_content}
-    end
-  end
+    redirect_to '/hangouts'
+  end 
 
   private
     def set_hangout
