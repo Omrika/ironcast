@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :hangout_responses
 
   resources :events
 

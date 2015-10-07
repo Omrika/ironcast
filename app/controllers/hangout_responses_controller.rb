@@ -1,2 +1,0 @@
-class HangoutResponsesController < ApplicationController
-end

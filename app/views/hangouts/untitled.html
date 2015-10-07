@@ -5,6 +5,7 @@
 
 	<h1>Hangouts</h1>
 	<% @hangouts.each do |hangout| %>
+		<% hangout.build_response %>
 		<%= hangout.name %>
 		<%= hangout.description %>
 		<%= hangout.hours%>:<% if hangout.minutes < 10 %><%= "0" + hangout.minutes.to_s %>
@@ -12,9 +13,10 @@
 			<%= hangout.minutes %>
 		<% end %>
 	<%= hangout.meridiem %>
-		<%= form_for [hangout, Response.new] do |f| %>
+		<% Response.create(:hangout_id => hangout.id) %>
+		<%= form_for [haResponse.new, url: hangout_response_path(hangout.id)] do |f| %>
+			<% binding.pry%>
     <div class="field">
-    <%= f.hidden_field :hangout_id, :value => hangout.id %>
       <%= f.label :name %><br>
       <%= f.text_field :name %><br>
     </div>
@@ -23,10 +25,7 @@
       <%= f.submit "Respond" %>
     </div>
   <% end %>
-			<% if hangout.responses.length > 0 %>
-				<%= hangout.responses.last.name %>
-			<% end %>
-			<br>
+		<br><br>
 	<% end %>
 <% end %>
 	</div>
