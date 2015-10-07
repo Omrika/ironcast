@@ -1,0 +1,17 @@
+<% if @events != nil %>
+  <div class="container">
+
+  <h1>Events</h1>
+  <% @events.each do |event| %>
+    <%= event.name %>
+    <%= event.description %>
+    <%= event.hours%>:<% if event.minutes < 10 %><%= "0" + event.minutes.to_s %>
+    <% else %>
+      <%= event.minutes %>
+    <% end %>
+  <%= event.meridiem %>
+  <a href="/events/<%= event.id %>/hangouts/new">Hangout at this event!</a>
+  <br><br>
+  <% end %>
+<% end %>
+</div>

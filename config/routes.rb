@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
 
-  resources :events
+  resources :events do
+    resources :hangouts
+  end
 
   
 
   resources :hangouts do
     resources :responses
   end
+
+  get '/supersecreteventcreate' => 'events#new_event'
+
+  get '/events/new' => 'hangouts#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

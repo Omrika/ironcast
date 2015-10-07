@@ -1,0 +1,12 @@
+<div class="container">
+  <%= form_for @event do |f| %>
+    <%= f.text_field :name, :placeholder => "event name" %>
+    <%= f.text_field :location, :placeholder => "event location" %>
+    <%= f.text_field :description, :placeholder => "event description", rows: 1 %>
+    <%= f.label :at %>
+    <%= f.select :hours, '1'..'12' %>
+    <%= f.select :minutes, '01'..'59' %>
+    <%= f.select :meridiem, ['AM','PM'] %><br>
+    <%= f.submit "Create Event" %>
+  <% end %>
+</div>
