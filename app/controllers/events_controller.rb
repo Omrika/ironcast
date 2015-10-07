@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   def show
   end
 
-  def new
+  def new_event
     @event = Event.new
   end
 
