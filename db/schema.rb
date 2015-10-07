@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20151005172748) do
     t.integer  "minutes"
     t.text     "description"
     t.string   "meridiem"
+    t.integer  "event_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
