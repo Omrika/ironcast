@@ -1,4 +1,8 @@
-<%= render 'form' %>
+<%= render 'form' %> 
+<div class="jumbotron">
+  <h1>Jumbotron</h1>
+  <p>Yeah</p>
+</div>
 
 <% if @hangouts != nil %>
 	<div class="container">
@@ -23,8 +27,10 @@
       <%= f.submit "Respond" %>
     </div>
   <% end %>
-			<% if hangout.responses.length > 0 %>
-				<%= hangout.responses.last.name %>
+			<% if hangout.responses.length > 0 %> 
+        <% hangout.responses.each do |n|%>
+          <%= n.name%><br>
+          <%end%>
 			<% end %>
 			<br>
 	<% end %>

@@ -1,7 +1,7 @@
 <div class="container">
 	<%= form_for @hangout do |f| %>
 		<%= f.text_field :name, :placeholder => "Your name" %>
-		<p>wants to</p>
+		wants to
 		<%= f.text_field :description, :placeholder => "do this thing", rows: 1 %>
 		<%= f.label :at %>
 		<%= f.select :hours, '1'..'12' %>
