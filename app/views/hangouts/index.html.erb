@@ -1,6 +1,5 @@
 <div class="jumbotron">
-<%= render 'form' %> 
-  
+  <%= render 'form' %> 
 </div>
 
 <% if @hangouts != nil %>
@@ -8,30 +7,41 @@
 
 	<h1>Hangouts</h1>
 	<% @hangouts.each do |hangout| %>
-		<p><%= hangout.name %> wants to
-		<%= hangout.description %> at
-		<%= hangout.hours%>:<% if hangout.minutes < 10 %><%= "0" + hangout.minutes.to_s %>
-		<% else %>
-			<%= hangout.minutes %>
-		<% end %>
-	<%= hangout.meridiem %></p>
-	<h3>Going: </h3>
-			<% if hangout.responses.length > 0 %> 
+    <% if hangout.minutes != nil %>
+
+      <p><%= hangout.name %> wants to
+      <%= hangout.description %> at
+  		<%= hangout.hours%>:<% if hangout.minutes < 10 %><%= "0" + hangout.minutes.to_s %>
+  		<% else %>
+  			<%= hangout.minutes %>
+  		<% end %>
+      <%= hangout.meridiem %></p>
+    
+    <%= link_to "Delete", hangout, method: :delete %>
+	  
+    <%= form_for [hangout, Response.new] do |f| %>
+      <div class="field">
+        <%= f.hidden_field :hangout_id, :value => hangout.id %>
+        <%= f.text_field :name, :placeholder => "Your name" %><br>
+      </div>
+      <div class="button">
+        <%= f.submit :class => 'btn btn-primary btn-md', :value => "Respond" %>
+      </div>
+    <% end %>
+  
+     <h3>Going: </h3>
+      <% if hangout.responses.length > 0 %> 
         <% hangout.responses.each do |n|%>
           <%= n.name%><br>
           <%end%>
-			<% end %>
-			<br>
-		<%= form_for [hangout, Response.new] do |f| %>
-    <div class="field">
-    <%= f.hidden_field :hangout_id, :value => hangout.id %>
-      <%= f.text_field :name, :placeholder => "Your name" %><br>
-    </div>
-
-    <div class="button">
-      <%= f.submit :class => 'btn btn-primary btn-md', :value => "Respond" %>
-    </div>
-  <% end %>
+      <%end%>
+      <br>
+    <% end %>
 	<% end %>
+  </div>
 <% end %>
-	</div>
+
+
+
+
+

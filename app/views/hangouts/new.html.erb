@@ -1,0 +1,14 @@
+<div class="container">
+  <%= form_for @hangout do |f| %>
+    <%= f.text_field :name, :placeholder => "Your name" %>
+    <p>wants to go to</p>
+    <%= f.text_field :description, :value => "#{@event.name} At #{@event.location}" %>
+    <!-- <%= f.text_field :description, :placeholder => "do this thing", rows: 1 %> -->
+    <%= f.hidden_field :hours, :value => @event.hours %>
+    <%= f.hidden_field :minutes, :value => @event.minutes %>
+    <%= f.hidden_field :meridiem, :value => @event.meridiem %><br>
+    <%= f.hidden_field :event_id, :value => @event.id %>
+    
+    <%= f.submit "Create Hangout" %>
+  <% end %>
+</div>
