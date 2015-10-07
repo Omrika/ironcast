@@ -17,7 +17,7 @@
   		<% end %>
       <%= hangout.meridiem %></p>
     
-    <%= link_to "Delete", hangout, method: :delete %>
+    <%= button_to "Delete", hangout, method: :delete, :class => "btn btn-sm" %><br>
 	  
     <%= form_for [hangout, Response.new] do |f| %>
       <div class="field">
