@@ -1,12 +1,10 @@
-<div class="container">
 	<%= form_for @hangout do |f| %>
-		<%= f.text_field :name, :placeholder => "Your name" %>
-			wants to
+		<p><%= f.text_field :name, :placeholder => "Your name" %>
+		wants to
 		<%= f.text_field :description, :placeholder => "do this thing", rows: 1 %>
-		<%= f.label :at %>
+		at 
 		<%= f.select :hours, '1'..'12' %>
 		<%= f.select :minutes, '01'..'59' %>
-		<%= f.select :meridiem, ['AM','PM'] %><br>
-		<%= f.submit "Create Hangout" %>
+		<%= f.select :meridiem, ['AM','PM'] %></p>
+		<%= f.submit :class => 'btn btn-primary btn-lg', :value => "Create Hangout" %>
 	<% end %>
-</div>
