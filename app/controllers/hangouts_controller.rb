@@ -34,13 +34,12 @@ class HangoutsController < ApplicationController
     @hangouts = Hangout.order(created_at: :desc).all
     @hangout = Hangout.new
     @response = Response.new
-
   end
 
   def new
-    @hangout = Hangout.new
     @event = Event.find(params[:event_id])
-    
+    binding.pry
+    @hangout = Hangout.new
   end
 
   def show
@@ -83,7 +82,7 @@ class HangoutsController < ApplicationController
     end
 
     def hangout_params
-      params.require(:hangout).permit(:name, :hours, :minutes, :meridiem, :description, :responses => [])
+      params.require(:hangout).permit(:name, :hours, :minutes, :meridiem, :event_id, :description, :responses => [])
     end
 end
 
