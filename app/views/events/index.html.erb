@@ -11,7 +11,7 @@
       <%= event.minutes %>
     <% end %>
   <%= event.meridiem %>
-  <%= button_to "event", new_event_hangout_path(event), :class => "button", :method => :get, :event_id => event.id  %><br />
+  <%= button_to "Hangout!", new_event_hangout_path(event), :class => "button", :method => :get, :event_id => event.id  %><br />
   <a href="/events/<%= event.id %>/hangouts/new">Hangout at this event!</a>
   <br><br>
   <% end %>
