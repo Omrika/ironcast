@@ -41,3 +41,101 @@ body {
 	height: 500px;
 	background-image: url("http://inbounderish.com/wp-content/uploads/2014/01/free-quality-images-deathtostockphoto-3.jpg");
 }
+/*.border {
+  margin-top:10px;
+  border: #cdcdcd medium solid;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 2px;
+    height: 200px;
+    margin-right:10px;
+}
+
+.delete {
+float: right; 
+text-align: right; 
+position: absolute; 
+right: 11px;
+}
+
+.blank {
+  float:right;  
+  width:120px; 
+  height: 20px;
+}
+
+.hangouts {
+  float: left;
+  width: 22em;
+  text-align: left;
+  word-wrap: break-word;
+  font-size: 15px;
+}
+
+.response {
+  position: absolute;
+  bottom: 0;
+}
+
+.going {
+  width: 300px;
+  float: left;
+  clear:both;
+  height: 20px;
+  line-height: 50px;
+  margin-right: 60px;
+  text-align: right;
+}
+
+.name {
+  float: right;
+  clear: both;
+  width: 100px;
+
+}
+
+.button {
+  float: left;
+  clear: both;
+}*/
+
+.border {
+  min-height: 5px;
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.2);
+  margin: 100px;
+  position: relative;
+  height: 250px;
+  width: 250px;
+}
+
+.hangouts {
+  margin-top: 18px;
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.delete {
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 11px;
+  padding: 4px 5px; 
+}
+/*
+.name {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+}*/
+
+.button {
+  margin-top: 100px;
+}
+
+.name, .hangouts {
+  font-weight: 600;
+}
+

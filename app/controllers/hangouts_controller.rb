@@ -38,7 +38,6 @@ class HangoutsController < ApplicationController
 
   def new
     @event = Event.find(params[:event_id])
-    binding.pry
     @hangout = Hangout.new
   end
 
