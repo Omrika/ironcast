@@ -1,0 +1,8 @@
+<%= @event.name %>
+    <%= @event.description %>
+    <%= @event.hours%>:<% if @event.minutes < 10 %><%= "0" + @event.minutes.to_s %>
+    <% else %>
+      <%= @event.minutes %>
+    <% end %>
+  <%= @event.meridiem %>
+  <%= button_to "Hangout!", new_event_hangout_path(@event), :class => "button", :method => :get, :event_id => @event.id  %><br/>

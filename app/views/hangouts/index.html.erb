@@ -11,7 +11,11 @@
     <div class="col-md-4">
       <div class="row">
         <p><%= hangout.name %> wants to
+        <% if hangout.event_id != nil %>
+        <a href="/events/<%= hangout.event_id %>"><%= hangout.description %>
+        <% else %>
         <%= hangout.description %> at
+        <% end %>
     		<%= hangout.hours%>:<% if hangout.minutes < 10 %><%= "0" + hangout.minutes.to_s %>
     		  <% else %>
     			 <%= hangout.minutes %>
