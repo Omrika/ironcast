@@ -29,6 +29,7 @@
 
 class HangoutsController < ApplicationController
   before_action :set_hangout, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user! , only: [:create, :new]
 
   def index
     @hangouts = Hangout.order(created_at: :desc).all
@@ -38,7 +39,6 @@ class HangoutsController < ApplicationController
 
   def new
     @event = Event.find(params[:event_id])
-    binding.pry
     @hangout = Hangout.new
   end
 
@@ -46,7 +46,6 @@ class HangoutsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @hangout = Hangout.create(hangout_params)
     respond_to do |format|
       if @hangout.save
