@@ -12,7 +12,7 @@
       <div class="row">
         <p><%= hangout.name %> wants to
         <% if hangout.event_id != nil %>
-        <a href="/events/<%= hangout.event_id %>"><%= hangout.description %></a>
+        <a href="/events/<%= hangout.event_id %>"><%= hangout.description %>
         <% else %>
         <%= hangout.description %> at
         <% end %>
@@ -20,7 +20,7 @@
     		  <% else %>
     			 <%= hangout.minutes %>
     		  <% end %>
-        <%= hangout.meridiem %></p>
+        <%= hangout.meridiem %></p></a>
         <%= button_to "Delete", hangout, method: :delete, :class => "btn btn-sm" %><br>  
 
         <%= form_for [hangout, Response.new] do |f| %>
