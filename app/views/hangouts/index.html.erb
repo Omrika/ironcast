@@ -12,7 +12,7 @@
       <div class="row">
         <p><%= hangout.name %> wants to
         <% if hangout.event_id != nil %>
-        <a href="/events/<%= hangout.event_id %>"><%= hangout.description %>
+        <a href="/events/<%= hangout.event_id %>"><%= hangout.description %></a>
         <% else %>
         <%= hangout.description %> at
         <% end %>
