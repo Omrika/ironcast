@@ -13,22 +13,22 @@
         <div class="border">
           <div class="hangouts">
             <p><%= hangout.name %> wants to
-          <% if hangout.event_id != nil %>
-        <a href="/events/<%= hangout.event_id %>"><%= hangout.description %>
-        <% else %>
-        <%= hangout.description %> at
-        <% end %>
-        <%= hangout.hours%>:<% if hangout.minutes < 10 %><%= "0" + hangout.minutes.to_s %>
-          <% else %>
-           <%= hangout.minutes %>
-          <% end %>
-        <%= hangout.meridiem %></p></a>
+            <% if hangout.event_id != nil %>
+              <a href="/events/<%= hangout.event_id %>"><%= hangout.description %>
+            <% else %>
+              <%= hangout.description %> at
+            <% end %>
+              <%= hangout.hours%>:<% if hangout.minutes < 10 %><%= "0" + hangout.minutes.to_s %>
+            <% else %>
+              <%= hangout.minutes %>
+            <% end %>
+              <%= hangout.meridiem %></p></a>
           </div>
-
-
+          <% if hangout.user_id == current_user.id %>
           <div class="delete">
             <%= button_to "Delete", hangout, method: :delete, :class => "btn btn-sm" %><br>
           </div>
+          <% end %>
           
           <div class="response">  
             <%= form_for [hangout, Response.new] do |f| %>
