@@ -44,7 +44,7 @@ height: 400px;
   background-position: -500px;
 }
 
-.jumbotron p {
+.jumbotron span {
   color: #ffffff;
 }
 
@@ -58,12 +58,12 @@ height: 400px;
 }
 
 .going {
-    overflow-x: scroll;
-     -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .hangout_head {
-    text-align: center;
-    font-size: 50px;
+  text-align: center;
+  font-size: 60px;
 }
 
