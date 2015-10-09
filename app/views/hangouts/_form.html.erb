@@ -1,8 +1,8 @@
 	<%= form_for @hangout do |f| %>
 		<p><%= f.text_field :name, :placeholder => "Your name" %>
-		wants to
+		<span>wants to</span>
 		<%= f.text_field :description, :placeholder => "do this thing", rows: 1 %>
-		at 
+		<span>at</span>
 		<%= f.select :hours, '1'..'12' %>
 		<%= f.select :minutes, '01'..'59' %>
 		<%= f.select :meridiem, ['AM','PM'] %>
