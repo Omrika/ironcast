@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron" >
   <%= render 'form' %> 
 </div>
 
@@ -32,22 +32,22 @@
           
           <div class="response">  
             <%= form_for [hangout, Response.new] do |f| %>
-              <div class="field">
+              
                 <%= f.hidden_field :hangout_id, :value => hangout.id %>
-                <%= f.text_field :name, :placeholder => "Your name" %><br>
-              </div>
+                <%= f.text_field :name, :placeholder => "Your name", style: 'text-align: center;', class: "field" %><br>
+              
               <div class="button">
-                <%= f.submit :class => 'btn btn-primary btn-md', :value => "Respond" %>
+                <%= f.submit :class => 'btn btn.outline btn-md', :value => "Respond" %>
               </div>
             <% end %>
           </div>
           
 
           <div class="going">
-            <h3>Going: </h3>
+            <!-- <h6>Going: </h6> -->
             <% if hangout.responses.length > 0 %> 
               <% hangout.responses.each do |n|%>
-                <%= n.name%><br>
+                <div class="scroll"><%= n.name%></div>
               <%end%>
             <%end%>
           </div>
