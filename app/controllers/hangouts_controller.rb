@@ -1,32 +1,3 @@
-# class HangoutsController < ApplicationController
-# 	def index
-# 		@hangouts = Hangout.order(created_at: :desc).all 
-# 		@hangout = Hangout.new
-# 		@response = Response.new
-# 	end
-
-
-# 	def create
-# 		@hangout = Hangout.create(hangout_params)
-# 		@response = Response.create(:hangout_id => @hangout.id)
-# 			if @hangout.save
-# 				redirect_to '/hangouts'
-# 			else
-# 				render 'new'
-# 			end
-# 		end
-
-# 		def show
-# 			@hangout = Hangout.find(params[:id])
-# 		end
-
-# 	private 
-# 	def hangout_params
-# 		params.require(:hangout).permit(:name, :description, :hours, :minutes, :meridiem, :response => [])
-# 	end
-# end
-
-
 class HangoutsController < ApplicationController
   before_action :set_hangout, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user! , only: [:create, :new]
@@ -35,6 +6,11 @@ class HangoutsController < ApplicationController
     @hangouts = Hangout.order(created_at: :desc).all
     @hangout = Hangout.new
     @response = Response.new
+    @hangouts.each do |hangout|
+      if hangout.created_at < (DateTime.current - 24.hours)
+        hangout.destroy
+      end
+    end
   end
 
   def new
