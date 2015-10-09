@@ -1,5 +1,6 @@
 <div class="jumbotron">
 <h1>Free? Let's do something.</h1>
+
   <%= render 'form' %> 
 </div>
 
@@ -14,41 +15,41 @@
         <div class="border">
           <div class="hangouts">
             <p><%= hangout.name %> wants to
-          <% if hangout.event_id != nil %>
-        <a href="/events/<%= hangout.event_id %>"><%= hangout.description %>
-        <% else %>
-        <%= hangout.description %> at
-        <% end %>
-        <%= hangout.hours%>:<% if hangout.minutes < 10 %><%= "0" + hangout.minutes.to_s %>
-          <% else %>
-           <%= hangout.minutes %>
-          <% end %>
-        <%= hangout.meridiem %></p></a>
+            <% if hangout.event_id != nil %>
+              <a href="/events/<%= hangout.event_id %>"><%= hangout.description %>
+            <% else %>
+              <%= hangout.description %> at
+            <% end %>
+              <%= hangout.hours%>:<% if hangout.minutes < 10 %><%= "0" + hangout.minutes.to_s %>
+            <% else %>
+              <%= hangout.minutes %>
+            <% end %>
+              <%= hangout.meridiem %></p></a>
           </div>
-
-
+          <% if hangout.user_id == current_user.id %>
           <div class="delete">
             <%= button_to "Delete", hangout, method: :delete, :class => "btn btn-sm" %><br>
           </div>
+          <% end %>
           
           <div class="response">  
             <%= form_for [hangout, Response.new] do |f| %>
-              <div class="field">
+              
                 <%= f.hidden_field :hangout_id, :value => hangout.id %>
-                <%= f.text_field :name, :placeholder => "Your name" %><br>
-              </div>
+                <%= f.text_field :name, :placeholder => "Your name", style: 'text-align: center;', class: "field" %><br>
+              
               <div class="button">
-                <%= f.submit :class => 'btn btn-primary btn-md', :value => "Respond" %>
+                <%= f.submit :class => 'btn btn.outline btn-md', :value => "Respond" %>
               </div>
             <% end %>
           </div>
           
 
           <div class="going">
-            <h3>Going: </h3>
+            <!-- <h6>Going: </h6> -->
             <% if hangout.responses.length > 0 %> 
               <% hangout.responses.each do |n|%>
-                <%= n.name%><br>
+                <div class="scroll"><%= n.name%></div>
               <%end%>
             <%end%>
           </div>

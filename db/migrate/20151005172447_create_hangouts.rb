@@ -7,6 +7,7 @@ class CreateHangouts < ActiveRecord::Migration
       t.text :description
       t.string :meridiem
       t.integer :event_id
+      t.integer :user_id
       t.timestamps null: false
     end
   end
