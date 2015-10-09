@@ -24,7 +24,6 @@
             <% end %>
               <%= hangout.meridiem %></p></a>
           </div>
-
           <% if hangout.user_id == current_user.id %>
           <div class="delete">
             <%= button_to "Delete", hangout, method: :delete, :class => "btn btn-sm" %><br>
