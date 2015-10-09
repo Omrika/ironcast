@@ -4,7 +4,7 @@
 		<%= f.text_field :description, :placeholder => "do this thing", rows: 1 %>
 		at 
 		<%= f.select :hours, '1'..'12' %>
-		<%= f.select :minutes, '01'..'59' %>
+		<%= f.select :minutes, ['00', '15', '30','45'] %>
 		<%= f.select :meridiem, ['AM','PM'] %>
 		<%= f.submit :class => 'btn btn-primary btn-lg', :value => "Create Hangout" %></p>
 	<% end %>
