@@ -13,12 +13,16 @@
         <div class="border">
           <div class="hangouts">
             <p><%= hangout.name %> wants to
-            <%= hangout.description %> at
-        		<%= hangout.hours%>:<% if hangout.minutes < 10 %><%= "0" + hangout.minutes.to_s %>
-        		  <% else %>
-        			 <%= hangout.minutes %>
-        		  <% end %>
-            <%= hangout.meridiem %></p>
+            <% if hangout.event_id != nil %>
+              <a href="/events/<%= hangout.event_id %>"><%= hangout.description %>
+            <% else %>
+              <%= hangout.description %> at
+            <% end %>
+              <%= hangout.hours%>:<% if hangout.minutes < 10 %><%= "0" + hangout.minutes.to_s %>
+            <% else %>
+              <%= hangout.minutes %>
+            <% end %>
+              <%= hangout.meridiem %></p></a>
           </div>
 
 
