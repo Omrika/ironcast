@@ -46,7 +46,10 @@ class HangoutsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @hangout = Hangout.create(hangout_params)
+    @hangout.user_id = current_user.id
+    @hangout.save
     respond_to do |format|
       if @hangout.save
         format.html { redirect_to '/hangouts', notice: 'Hangout was successfully created.' }
@@ -71,7 +74,9 @@ class HangoutsController < ApplicationController
   end
 
   def destroy
-    @hangout.destroy
+    if @hangout.user_id == current_user.id
+      @hangout.destroy
+    end
     redirect_to '/hangouts'
   end 
 
@@ -81,7 +86,7 @@ class HangoutsController < ApplicationController
     end
 
     def hangout_params
-      params.require(:hangout).permit(:name, :hours, :minutes, :meridiem, :event_id, :description, :responses => [])
+      params.require(:hangout).permit(:name, :hours, :minutes, :meridiem, :event_id, :description, :user_id, :responses => [])
     end
 end
 
