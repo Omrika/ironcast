@@ -1,9 +1,11 @@
-<div class="jumbotron" >
+<div class="jumbotron">
+<h1>Free? Let's do something.</h1>
+
   <%= render 'form' %> 
 </div>
 
-<div class="container-fluid">
 <% if @hangouts != nil %>
+<div class="container-fluid">
 
 	<h1>Hangouts</h1>
 	<% @hangouts.each do |hangout| %>

@@ -36,6 +36,22 @@
 
 .name, .hangouts {
   font-weight: 600;
+}
+
+.jumbotron {
+height: 400px;
+  background-image: url("friends-chilling.jpg");
+  background-position: -500px;
+}
+
+.jumbotron p {
+  color: #ffffff;
+}
+
+.jumbotron h1 {
+  color: #ffffff !important;
+}
+
 } 
 
 .field {
@@ -46,3 +62,4 @@
     overflow-x: scroll;
      -webkit-overflow-scrolling: touch;
 }
+
