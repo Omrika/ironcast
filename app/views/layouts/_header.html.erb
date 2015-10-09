@@ -5,8 +5,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav" id="fixed">
         <li><a href="../hangouts">ironCast</a></li>
-        <li><a href="http://flatironschool.com/">The Flatiron School</a></li>
-        <li><a href="https://learn.co">Learn</a></li>
+        <li><a href="#">Events</a></li>
+
         <% if user_signed_in? %>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <% else %>
@@ -17,7 +17,9 @@
       
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../events">Events</a></li>
+
+        <li><a href="http://flatironschool.com/">The Flatiron School</a></li>
+        <li><a href="https://learn.co">Learn</a></li>
           </ul>
         </li>
       </ul>
